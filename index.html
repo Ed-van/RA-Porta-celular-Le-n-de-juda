@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <div id="estado">Apunta la cámara al marcador HIRO</div>
+  <div id="estado">Apunta la cámara al marcador del león</div>
   <div id="ayuda">☝️ 1 dedo: girar · ✌️ 2 dedos: zoom y torcer</div>
   <div id="ui">
     <button id="btnMenos">−</button>
@@ -147,7 +147,7 @@
     <a-entity light="type: ambient; intensity: 0.75"></a-entity>
     <a-entity light="type: directional; intensity: 0.8" position="1 2 1.5"></a-entity>
 
-    <a-marker preset="hiro" id="marcador" smooth="true" smoothCount="5">
+    <a-marker type="pattern" url="leon.patt" id="marcador" smooth="true" smoothCount="5">
       <a-entity id="modelo" position="0 0.7 0">
         <a-entity portacelular></a-entity>
       </a-entity>
@@ -161,7 +161,7 @@
     const marcador = document.getElementById('marcador');
     const estado = document.getElementById('estado');
     marcador.addEventListener('markerFound', () => estado.textContent = '✅ Marcador detectado');
-    marcador.addEventListener('markerLost',  () => estado.textContent = 'Apunta la cámara al marcador HIRO');
+    marcador.addEventListener('markerLost',  () => estado.textContent = 'Apunta la cámara al marcador del león');
     setTimeout(() => document.getElementById('ayuda').style.opacity = 0, 7000);
 
     // ====== Estado de la vista ======
